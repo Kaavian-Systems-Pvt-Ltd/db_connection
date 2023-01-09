@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 /**
  * 
- * @param {String} get connectionURL
+ * @param {String} connectionURL connectionURL
  */
-const dbConnection= (get) => {
-mongoose.connect(get);
+const dbConnection= (connectionURL) => {
+mongoose.connect(connectionURL);
   const db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error: '));
   db.once('open', function () {
